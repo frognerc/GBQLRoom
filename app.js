@@ -10,8 +10,15 @@ var timeoutSeek = 0;
 var timeoutResume = 0;
 var timeoutFinish = 0;
 var dateTime = new Date().getTime() / 1000;
-var startTime = 1464678978;
-var globalTimeStamp = Math.round(dateTime - startTime);
+var startTime = 1464738588;
+var globalTimeStamp = Math.floor(dateTime - startTime);
+var videoTimeStamp = 0;
+var totalLength = 1;
+
+console.log("Start Time: " + dateTime);
+console.log("Current Time: " + globalTimeStamp);
+console.log("Minutes: " + Math.floor(globalTimeStamp / 60));
+console.log("Seconds: " + Math.floor(globalTimeStamp % 60));
 
 // Serve up a video when page loads
 $(document).ready(calculateCurrentVideo());
@@ -21,24 +28,34 @@ setInterval(changeTime,1000);
 // Gets random video id and name from video array
 function pickRandomQuickLook(){
 	resetVideoTimeouts();
-	document.getElementById("currVideo").src='http://www.giantbomb.com/videos/embed/' + quickLooks[currentVideoIndex].split(',')[0] + '/';
-	document.getElementById("VideoTitle").innerHTML=quickLooks[currentVideoIndex].split(',')[1];
-	videoGBLink=quickLooks[currentVideoIndex].split(',')[3];
+	document.getElementById("currVideo").src='http://www.giantbomb.com/videos/embed/' + quickLooks[currentVideoIndex].split('~')[0] + '/';
+	document.getElementById("VideoTitle").innerHTML=quickLooks[currentVideoIndex].split('~')[1];
+	videoGBLink=quickLooks[currentVideoIndex].split('~')[3];
 }
 
 function changeTime(){
 	globalTimeStamp += 1;
-	$('#timeSinceStart').html(globalTimeStamp);
+	$('#timeSinceStart').html(Math.floor(globalTimeStamp / 60) + ":" + globalTimeStamp % 60);
 }
 
 function calculateCurrentVideo(){
 	var i = 0;
-	var totalLength = 0;
+	var lastLength = 0;
+	totalLength = 0;
+	console.log("Before Calc: " + globalTimeStamp);
 	
 	for(i = 0; totalLength < globalTimeStamp; i++){
-		totalLength = totalLength + parseInt(quickLooks[i].split(',')[2]);
+		totalLength = totalLength + parseInt(quickLooks[i].split('~')[2]);
+		console.log("Video Length: " + parseInt(quickLooks[i].split('~')[2]))
+		lastLength = parseInt(quickLooks[i].split('~')[2]);
+		console.log(totalLength + " Index: " + i);
 	}
-	return i;
+	console.log(totalLength);
+	console.log(lastLength);
+	globalTimeStamp = lastLength - (totalLength - globalTimeStamp);
+	currentVideoIndex = i - 1;
+	console.log(currentVideoIndex);
+	console.log("After Calc: " + globalTimeStamp);
 }
 
 function resetVideoTimeouts(){

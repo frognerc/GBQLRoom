@@ -50,7 +50,7 @@ $(document).ready(
 );
 
 function setVideoForPlay(){
-	timeoutPlay = setTimeout('seekVideo(1)', 1000)
+	timeoutPlay = setTimeout('seekVideo(globalTimeStamp)', 1000)
 	timeoutSeek = setTimeout(playVideo, 2000)
 	timeoutResume = setTimeout(resumeVideo, 4000)
 	timeoutFinish = setTimeout(alertWhenFinished, 10000);
@@ -122,6 +122,7 @@ function alertWhenFinished()
 
 		function()
 		{
+			currentVideoIndex += 1;
 			pickRandomQuickLook();
 		},
 
