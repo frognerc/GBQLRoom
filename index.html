@@ -11,22 +11,31 @@
   </head>
   <body>
 		<div id="header">
-			<h1>GIANT BOMB RANDOM QUICKLOOK PLAYER</h1>		
+			<h1>GIANT BOMB QUICK LOOK VIEWING PARTY</h1>		
 		<div id="top_bar"></div>
 		</div>
 		<section>
-			<br>
-			<h1 id="VideoTitle">Quicklook</h1>
-			<p id="timeSinceStart">Time</p>
-			<iframe data-cbsi-video width="950" height="576" id="currVideo" src="http://www.giantbomb.com/videos/embed/34/" frameborder="0" allowfullscreen></iframe>
-			<br><br>
-			<input id='GBLink' type='image' src='GButton0.png' value='Link' onClick='openGBLink();'/>
-			<input id='resumePause' type='image' src='Buttons_0.png' value='Play' onClick='resumeVideo();'/>
-			<input id='change' type='image' src='ChangeBUp.png' value='Change' onClick='pickRandomQuickLook();'/>
-			<br><br>
-			<p id="NOTE">NOTE: If the Giant Bomb video player quality setting is set to "YouTube", the pause button will not function and the page will not auto select and auto play the next video when the previous video is finished.</p>
-			<p id="NOTE">A webpage by <a href="http://www.giantbomb.com/profile/prewaroregon/">PreWarOregon</a></p>
+			<div id="videoDiv">
+				<br>
+				<h1 id="VideoTitle">Quicklook</h1>
+				<p><span id="timeSinceStart">Time</span>
+					<input id='toTimestamp' type='button' src='GButton0.png' value='Synchronize' onClick='goToCurrentTimestamp();'/>
+				</p>
+				<div class="videoWrapper">
+					<iframe data-cbsi-video width="950" height="576" id="currVideo" src="http://www.giantbomb.com/videos/embed/34/" frameborder="0" allowfullscreen></iframe>
+				</div>
+			</div>
+			<div id="chatDiv">
+				<div class="chatWrapper">
+					<iframe src="https://kiwiirc.com/client/irc.kiwiirc.com/?&theme=cli#GiantBombQuickLookParty" width="950" height="900" style="border:0;"></iframe>
+				</div>
+			</div>
 		</section>
+		<div id="footNote">
+			<p id="NOTE">NOTE: If the Giant Bomb video player quality setting is set to "YouTube", the Synchronize button will not sync the video.</p>
+			<p id="NOTE">A webpage by <a href="http://www.giantbomb.com/profile/prewaroregon/">PreWarOregon</a></p>
+			<br>
+		</div>
   </body>
   <script src="quickLookArray.js" type="text/javascript" charset="utf-8"></script>
   <script src="app.js" type="text/javascript" charset="utf-8"></script>

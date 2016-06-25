@@ -13,7 +13,7 @@ var dateTime = new Date().getTime() / 1000;
 var startTime = 1464738588;
 var globalTimeStamp = Math.floor(dateTime - startTime);
 var videoTimeStamp = 0;
-var totalLength = 1;
+var totalLength = 0;
 
 console.log("Start Time: " + dateTime);
 console.log("Current Time: " + globalTimeStamp);
@@ -33,29 +33,48 @@ function pickRandomQuickLook(){
 	videoGBLink=quickLooks[currentVideoIndex].split('~')[3];
 }
 
+lineUpChatWithVideo();
 function changeTime(){
 	globalTimeStamp += 1;
-	$('#timeSinceStart').html(Math.floor(globalTimeStamp / 60) + ":" + globalTimeStamp % 60);
+	var hours = Math.floor(globalTimeStamp / 3600);
+	var minutes = Math.floor((globalTimeStamp % 3600) / 60);
+	if(minutes < 10){
+		minutes = "0" + minutes;
+	}
+	var seconds = Math.floor((globalTimeStamp % 3600) % 60);
+	if(seconds < 10){
+		seconds = "0" + seconds;
+	}
+	
+	if(hours > 0){
+		$('#timeSinceStart').html("Current Universal Time Stamp - " + hours + ":" + minutes + ":" + seconds);
+	}else{
+		$('#timeSinceStart').html("Current Universal Time Stamp - " + minutes + ":" + seconds);
+	}
 }
 
 function calculateCurrentVideo(){
 	var i = 0;
 	var lastLength = 0;
 	totalLength = 0;
-	console.log("Before Calc: " + globalTimeStamp);
+	
+	dateTime = new Date().getTime() / 1000;
+	globalTimeStamp = Math.floor(dateTime - startTime);
+	
+	//console.log("Before Calc: " + globalTimeStamp);
 	
 	for(i = 0; totalLength < globalTimeStamp; i++){
 		totalLength = totalLength + parseInt(quickLooks[i].split('~')[2]);
-		console.log("Video Length: " + parseInt(quickLooks[i].split('~')[2]))
+		//console.log("Video Length: " + parseInt(quickLooks[i].split('~')[2]))
 		lastLength = parseInt(quickLooks[i].split('~')[2]);
-		console.log(totalLength + " Index: " + i);
+		//console.log(totalLength + " Index: " + i);
 	}
-	console.log(totalLength);
-	console.log(lastLength);
+	//console.log(totalLength);
+	//console.log(lastLength);
 	globalTimeStamp = lastLength - (totalLength - globalTimeStamp);
 	currentVideoIndex = i - 1;
-	console.log(currentVideoIndex);
-	console.log("After Calc: " + globalTimeStamp);
+	//console.log(currentVideoIndex);
+	//console.log("After Calc: " + globalTimeStamp);
 }
 
 function resetVideoTimeouts(){

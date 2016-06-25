@@ -56,6 +56,10 @@ function setVideoForPlay(){
 	timeoutFinish = setTimeout(alertWhenFinished, 10000);
 }
 
+function goToCurrentTimestamp(){
+	seekVideo(globalTimeStamp - 3);
+}
+
 function playVideo()
 {
 	gApi.play(gVideoId,
@@ -103,7 +107,7 @@ function resumeVideo()
 
 function seekVideo(timeStamp)
 {
-	gApi.setCurrentTimeStamp(gVideoId, timeStamp,
+	gApi.setCurrentTimeStamp(gVideoId, timeStamp + 5,
 
 		function()
 		{
@@ -122,7 +126,7 @@ function alertWhenFinished()
 
 		function()
 		{
-			currentVideoIndex += 1;
+			calculateCurrentVideo();
 			pickRandomQuickLook();
 		},
 
