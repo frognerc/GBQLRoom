@@ -108,6 +108,10 @@ section {
 	float: right;
 }
 
+#chatDiv, #videoDiv #footNote {
+	display: inline-block;
+}
+
 .videoWrapper {
 	position: relative;
 	padding-bottom: 56%; /* 16:9 */
@@ -140,6 +144,10 @@ section {
 
 #footNote {
 	text-align: center;
+	overflow: visible;
+	float: left;
+	width: 100%;
+	padding-top: 10%;
 }
 
 #timeSinceStart {
