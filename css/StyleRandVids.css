@@ -42,7 +42,7 @@ h1 {
 }
 
 #VideoTitle{
-	font-size: 2.5vw;
+	font-size: 40px;
 	color: #ffffff;
 }
 
@@ -62,7 +62,6 @@ a:visited {
 body {
 	height: 100%;
 	font-family: 'Open Sans', sans-serif;
-	background-color: #1a1a1a;
 }
 
 html,
@@ -70,11 +69,37 @@ body {
    margin:0;
    padding:0;
    height:100%;
+   background-color: #1a1a1a;
 }
 section {
 	background-image: url(MoonShot.jpg);
 	margin:0;
 	border:0;
+	height: 100%;
+	text-align: center;
+}
+
+#videoDiv{
+	width: 58%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+#chatDiv, #videoDiv #footNote {
+	display: inline-block;
+}
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 58%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
 	height: 100%;
 }
 
@@ -97,83 +122,8 @@ section {
 	
 }
 
-#videoDiv{
-    float: left;
-	width: 58%;
-	text-align: center;
-}
-
-#chatDiv{
-	width: 40%;
-	float: right;
-}
-
-#chatDiv, #videoDiv #footNote {
-	display: inline-block;
-}
-
-.videoWrapper {
-	position: relative;
-	padding-bottom: 56%; /* 16:9 */
-	padding-top: 25px;
-	height: 0;
-	margin-left: 3%;
-}
-.videoWrapper iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-
-.chatWrapper {
-	position: relative;
-	padding-bottom: 110%;
-	padding-top: 25px;
-	height: 0;
-}
-.chatWrapper iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	box-shadow: 10px 10px 25px 5px #000000;
-}
-
-#footNote {
-	text-align: center;
-	overflow: visible;
-	float: left;
-	width: 100%;
-	padding-top: 10%;
-}
-
-#timeSinceStart {
-	font-size: 1.2vw;
-}
-
-#NOTE, #timeSinceStart {
+#NOTE {
 	color: #ffffff;
-}
-
-#toTimestamp {
-	background: #cc0000;
-  	border: none;
-  	border-radius: 10px;
-  	color: #ffffff;
-	font-family: 'Changa One', sans-serif;
-  	font-size: 20px;
-  	width: 150px;
-	padding: 10px;
-	margin: 0 0 0 20px;
-  	outline: none;
-  	cursor: pointer;	
-	box-shadow: 5px 5px 10px 5px black;
-}
-#toTimestamp:hover {
-	background: #ff0000;
 }
 
 #main_menu {
@@ -213,66 +163,11 @@ section {
 }
 
 @media (max-width: 960px){
-	
-	#videoDiv{
-		float: none;
-		width: 95%;
-		text-align: center;
-		margin: 0 auto;
-	}
-	
-	.videoWrapper {
-		position: relative;
-		padding-bottom: 56%; /* 16:9 */
-		padding-top: 25px;
-		height: 0;
-		margin: 0;
-	}
-	
-	.videoWrapper iframe {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
+	#change,#GBLink {
+		width: 10%;
 	}
 
-	#chatDiv{
-		margin: 20px 0 0 0;
-		width: 100%;
-		height: 300px;
-		float: none;
-	}
-	
-	.chatWrapper {
-		position: relative;
-		padding-bottom: 0;
-		padding-top: 0;
-		height: 100%;
-	}
-	
-	.chatWrapper iframe {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		box-shadow: none;
-	}
-	
-	#footNote {
-		text-align: center;
-		float: none;
-		position: relative;
-	}
-
-	#VideoTitle{
-		font-size: 4.5vw;
-		color: #ffffff;
-	}
-	
-	#timeSinceStart {
-		padding-top: 3px;
-		font-size: 2.9vw;
+	#resumePause {
+		width: 14%;
 	}
 }

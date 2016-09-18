@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <title>Giant Bomb Quicklooks for Days!</title>	
 		<link href='https://fonts.googleapis.com/css?family=Changa+One|Open+Sans:400,400italic,700,700italic,800' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="css/StyleRandVids.css">	
+		<link rel="stylesheet" href="css/Styyyle.css">	
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script src="http://static.giantbomb.com/js/compiled/public/videoEmbedApi.js" type="text/javascript"></script>
   </head>
   <body>
 		<div id="header">
-			<h1>GIANT BOMB RANDOM QUICKLOOK PLAYER</h1>	
+			<h1>GIANT BOMB QUICK LOOK PARTY</h1>
 			<nav id="main_menu">
 				<ul>
 					<li><a href="index.html" class="selected">Random Quick Looks</a></li><!--
@@ -24,23 +24,27 @@
 			<div id="videoDiv">
 				<br>
 				<h1 id="VideoTitle">Quicklook</h1>
+				<p><span id="timeSinceStart">Time</span>
+					<input id='toTimestamp' type='button' src='GButton0.png' value='Synchronize' onClick='goToCurrentTimestamp();'/>
+				</p>
 				<div class="videoWrapper">
 					<iframe data-cbsi-video width="950" height="576" id="currVideo" src="http://www.giantbomb.com/videos/embed/34/" frameborder="0" allowfullscreen></iframe>
 				</div>
 			</div>
-			<br>
-			<div id="buttons">
-				<input id='GBLink' type='image' src='GButton0.png' value='Link' onClick='openGBLink();'/>
-				<input id='resumePause' type='image' src='Buttons_0.png' value='Play' onClick='resumeVideo();'/>
-				<input id='change' type='image' src='ChangeBUp.png' value='Change' onClick='pickRandomQuickLook();'/>
+			<div id="chatDiv">
+				<div class="chatWrapper">
+					<iframe src="https://kiwiirc.com/client/irc.kiwiirc.com/?&theme=cli#GiantBombQuickLookParty" width="950" height="560" style="border:0;"></iframe>
+				</div>
 			</div>
-			<br><br>
-			<p id="NOTE">NOTE: If the Giant Bomb video player quality setting is set to "YouTube", the pause button will not function and the page will not auto select and auto play the next video when the previous video is finished.</p>
-			<p id="NOTE">A webpage by <a href="http://www.giantbomb.com/profile/prewaroregon/">PreWarOregon</a></p>
+			<div id="footNote">
+				<p id="NOTE">NOTE: If the Giant Bomb video player quality setting is set to "YouTube", the Synchronize button will not sync the video.</p>
+				<p id="NOTE">A webpage by <a href="http://www.giantbomb.com/profile/prewaroregon/">PreWarOregon</a></p>
+				<br>
+			</div>
 		</section>
   </body>
   <script src="quickLookArray.js" type="text/javascript" charset="utf-8"></script>
-  <script src="app.js" type="text/javascript" charset="utf-8"></script>
-  <script src="videoApiControlGBR.js" type="text/javascript" charset="utf-8"></script>
+  <script src="chatApp.js" type="text/javascript" charset="utf-8"></script>
+  <script src="videoApiControll.js" type="text/javascript" charset="utf-8"></script>
   <script src="googleTracking.js" type="text/javascript" charset="utf-8"></script>
 </html>
