@@ -1,4 +1,5 @@
 // 1 = pause button, 0 = play button
+
 var pauseOrResume = 1;
 
 var currentVideoIndex = 0;
@@ -10,12 +11,12 @@ var timeoutSeek = 0;
 var timeoutResume = 0;
 var timeoutFinish = 0;
 var dateTime = new Date().getTime() / 1000;
-var startTime = 1473904774;
+var startTime = 1488932254;
 var globalTimeStamp = Math.floor(dateTime - startTime);
 var videoTimeStamp = 0;
 var totalLength = 0;
 
-console.log("Start Time: " + dateTime);
+console.log("Start Time LOL: " + dateTime);
 console.log("Current Time: " + globalTimeStamp);
 console.log("Minutes: " + Math.floor(globalTimeStamp / 60));
 console.log("Seconds: " + Math.floor(globalTimeStamp % 60));
@@ -40,12 +41,12 @@ function changeTime(){
 	if(minutes < 10){
 		minutes = "0" + minutes;
 	}
-	
+
 	var seconds = Math.floor((globalTimeStamp % 3600) % 60);
 	if(seconds < 10){
 		seconds = "0" + seconds;
 	}
-	
+
 	if(hours > 0){
 		$('#timeSinceStart').html("Current Universal Time Stamp - " + hours + ":" + minutes + ":" + seconds);
 	}else{
@@ -57,12 +58,12 @@ function calculateCurrentVideo(){
 	var i = 0;
 	var lastLength = 0;
 	totalLength = 0;
-	
+
 	dateTime = new Date().getTime() / 1000;
 	globalTimeStamp = Math.floor(dateTime - startTime);
-	
+
 	//console.log("Before Calc: " + globalTimeStamp);
-	
+
 	for(i = 0; totalLength < globalTimeStamp; i++){
 		totalLength = totalLength + parseInt(quickLooks[i].split('~')[3]);
 		//console.log(quickLooks[i].split('~')[2]);
