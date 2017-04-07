@@ -1,24 +1,29 @@
+<!--
+Page for Quick Look Individual Viewing Page.
+Picks a random quick look to play for viewer. 
+-->
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Giant Bomb Quicklooks for Days!</title>	
+	<head>
+		<meta charset="utf-8">
+		<title>Giant Bomb Quicklooks for Days!</title>
+		<link rel="icon" href="css/Images/bombLogo.png">
 		<link href='https://fonts.googleapis.com/css?family=Changa+One|Open+Sans:400,400italic,700,700italic,800' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="css/StyleRandVids.css">	
+		<link rel="stylesheet" href="css/StyleRandVids.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script src="http://static.giantbomb.com/js/compiled/public/videoEmbedApi.js" type="text/javascript"></script>
-  </head>
-  <body>
+	</head>
+	<body>
 		<div id="header">
-			<h1>GIANT BOMB RANDOM QUICKLOOK PLAYER</h1>	
+			<h1>GIANT BOMB RANDOM QUICKLOOK PLAYER</h1>
 			<nav id="main_menu">
 				<ul>
 					<li><a href="index.html" class="selected">Random Quick Looks</a></li><!--
 					--><li><a href="viewParty.html">Quick Looks with Chat</a></li>
 				</ul>
 			</nav>
-		<div id="top_bar"></div>
+			<div id="top_bar"></div>
 		</div>
 		<section>
 			<div id="videoDiv">
@@ -30,17 +35,22 @@
 			</div>
 			<br>
 			<div id="buttons">
-				<input id='GBLink' type='image' src='GButton0.png' value='Link' onClick='openGBLink();'/>
-				<input id='resumePause' type='image' src='Buttons_0.png' value='Play' onClick='resumeVideo();'/>
-				<input id='change' type='image' src='ChangeBUp.png' value='Change' onClick='pickRandomQuickLook();'/>
+				<input id='GBLink' type='image' src='css/Images/GBLink_0.png' value='Link' onClick='openGBLink();'/>
+				<input id='resumePause' type='image' src='css/Images/pause_0.png' value='Play' onClick='resumeVideo();'/>
+				<input id='change' type='image' src='css/Images/next_0.png' value='Change' onClick='pickRandomQuickLook();'/>
 			</div>
 			<br><br>
-			<p id="NOTE">NOTE: If the Giant Bomb video player quality setting is set to "YouTube", the pause button will not function and the page will not auto select and auto play the next video when the previous video is finished.</p>
-			<p id="NOTE">A webpage by <a href="http://www.giantbomb.com/profile/prewaroregon/">PreWarOregon</a></p>
 		</section>
-  </body>
-  <script src="quickLookArray.js" type="text/javascript" charset="utf-8"></script>
-  <script src="app.js" type="text/javascript" charset="utf-8"></script>
-  <script src="videoApiControlGBR.js" type="text/javascript" charset="utf-8"></script>
-  <script src="googleTracking.js" type="text/javascript" charset="utf-8"></script>
+		<div id="footer">
+			<div id="footNote">
+				<p id="NOTE">A fan website by <a href="http://www.giantbomb.com/profile/prewaroregon/">PreWarOregon</a>.
+				<br>
+				All video content comes from <a href="http://www.giantbomb.com">GiantBomb.com</a>.</p>
+			</div>
+		</div>
+	</body>
+	<script src="JavaScript/quickLookArray.js" type="text/javascript" charset="utf-8"></script>
+	<script src="JavaScript/app.js" type="text/javascript" charset="utf-8"></script>
+	<script src="JavaScript/videoApiControlGBR.js" type="text/javascript" charset="utf-8"></script>
+	<script src="JavaScript/googleTracking.js" type="text/javascript" charset="utf-8"></script>
 </html>

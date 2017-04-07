@@ -27,7 +27,7 @@ $(document).ready(
 
 							function(result)
 							{
-								// The code is here is a hack, you need to make better...
+								
 								if(i == 0){
 									gVideoId = result[0].id;
 									gApi = $.data(document.getElementById('currVideo'), 'cbsi-embed-api');

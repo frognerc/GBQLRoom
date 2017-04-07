@@ -1,9 +1,95 @@
-/************************************
+/**********************************************
+GENERAL OVERVIEW
+***********************************************/
+
+* a {
+	text-decoration: none;
+	color: #cc0000;
+}
+
+a:visited {
+	color: #cc0000;
+}
+
+
+/**********************************************
 HEADER
-*************************************/
+***********************************************/
+
+#header{
+	text-decoration: none;
+	letter-spacing: 3px;
+	margin: 0 0 0 0;
+	padding: 5px 0 0 0;
+	width: 100%;
+	border: 0;
+	text-align: center;
+	background-size: contain;
+	background-color: #1a1a1a;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#141414+0,333333+100 */
+	background: #141414; /* Old browsers */
+	background: -moz-linear-gradient(top,  #141414 0%, #333333 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #141414 0%,#333333 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #141414 0%,#333333 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#141414', endColorstr='#333333',GradientType=0 ); /* IE6-9 */
+}
+
 #header h1 {
 	font-size: 50px;
 	padding: 20px 0 20px 0;
+}
+
+#top_bar{
+	margin:0;
+	padding: 2px 0 0 0;
+	background-color: #cc0000;
+	border-top: 2px solid #ff0000;
+	border-bottom: 2px solid #990000;
+}
+
+#main_menu li {
+	display: inline-block;
+	text-align: center;
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+	padding: 10px 30px 10px 30px;
+	-webkit-box-shadow:inset 1px 1px 1px 1px #4A4A4A;
+	box-shadow:inset 1px 1px 1px 1px #4A4A4A;
+}
+
+#main_menu li:hover {
+	background-color: #cc0000;
+	box-shadow:inset 1px 1px 1px 1px #ff0000;
+}
+
+#header nav ul {
+	text-align: center;
+	background-color: #262626;
+	margin: auto;
+	list-style: none;
+	padding: 0;
+	background-image: url(../img/header_background.jpg);
+}
+
+#header a:visited, #header a:link {
+	color: #fff;
+}
+
+/**********************************************
+BODY
+***********************************************/
+
+#currVideo{
+	box-shadow: 10px 10px 25px 5px #000000;
+}
+
+html,
+body {
+	margin:0;
+	padding:0;
+	height:100%;
+	font-family: 'Open Sans', sans-serif;
+	background-color: #1a1a1a;
 }
 
 h1 {
@@ -15,30 +101,11 @@ h1 {
 	color: #ffffff;
 }
 
-#header{
-	text-decoration: none; 
-	letter-spacing: 3px;
-	margin: 0 0 0 0;
-	padding: 5px 0 0 0;
-	width: 100%;	
-  	border: 0;
-  	text-align: center;
-	background-size: contain;
-	background-color: #1a1a1a;
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#141414+0,333333+100 */
-	background: #141414; /* Old browsers */
-	background: -moz-linear-gradient(top,  #141414 0%, #333333 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top,  #141414 0%,#333333 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom,  #141414 0%,#333333 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#141414', endColorstr='#333333',GradientType=0 ); /* IE6-9 */
-}
-
-#top_bar{
+section {
+	background-image: url(Images/MoonShot.jpg);
 	margin:0;
-  	padding: 2px 0 0 0;
-  	background-color: #cc0000;
-  	border-top: 2px solid #ff0000;
-  	border-bottom: 2px solid #990000;
+	border:0;
+	height:100%;
 }
 
 #VideoTitle{
@@ -46,59 +113,8 @@ h1 {
 	color: #ffffff;
 }
 
-#currVideo{
-	box-shadow: 10px 10px 25px 5px #000000;
-}
-
-* a {
-	text-decoration: none;
-	color: #cc0000;
-}
-
-a:visited {
-	color: #cc0000;
-}
-
-body {
-	height: 100%;
-	font-family: 'Open Sans', sans-serif;
-	background-color: #1a1a1a;
-}
-
-html,
-body {
-   margin:0;
-   padding:0;
-   height:100%;
-}
-section {
-	background-image: url(MoonShot.jpg);
-	margin:0;
-	border:0;
-	height: 100%;
-}
-
-#change {
-	padding: 0 0 12px 0;	
-	border: none;
-	outline: none;
-}
-
-#GBLink {
-	padding: 0 18px 12px 0;	
-	border: none;
-	outline: none;
-}
-
-#resumePause {
-	padding: 0 0 0 0;
-	border: none;
-	outline:none;
-	
-}
-
 #videoDiv{
-    float: left;
+	float: left;
 	width: 58%;
 	text-align: center;
 }
@@ -142,14 +158,6 @@ section {
 	box-shadow: 10px 10px 25px 5px #000000;
 }
 
-#footNote {
-	text-align: center;
-	overflow: visible;
-	float: left;
-	width: 100%;
-	padding-top: 10%;
-}
-
 #timeSinceStart {
 	font-size: 1.2vw;
 }
@@ -160,67 +168,58 @@ section {
 
 #toTimestamp {
 	background: #cc0000;
-  	border: none;
-  	border-radius: 10px;
-  	color: #ffffff;
+	border: none;
+	border-radius: 10px;
+	color: #ffffff;
 	font-family: 'Changa One', sans-serif;
-  	font-size: 20px;
-  	width: 150px;
+	font-size: 20px;
+	width: 150px;
 	padding: 10px;
 	margin: 0 0 0 20px;
-  	outline: none;
-  	cursor: pointer;	
+	outline: none;
+	cursor: pointer;
 	box-shadow: 5px 5px 10px 5px black;
 }
+
 #toTimestamp:hover {
 	background: #ff0000;
 }
 
-#main_menu {
-  border-top: 1px solid black;
+/**********************************************
+FOOTER
+***********************************************/
+
+#footNote {
+	text-align: center;
+	overflow: visible;
+	float: left;
+	width: 100%;
+	padding-top: 10px;
+	-webkit-box-shadow:inset 0px 1px 1px 0px #4A4A4A;
+	box-shadow:inset 0px 1px 1px 0px #4A4A4A;
 }
 
-#main_menu li {
-  display: inline-block;
-  text-align: center;
-  border-right: 1px solid black;
-  border-left: 1px solid black;
-  padding: 10px 30px 10px 30px;
-  -webkit-box-shadow:inset 1px 1px 1px 1px #4A4A4A;
-  box-shadow:inset 1px 1px 1px 1px #4A4A4A;
+#footer {
+	clear: both;
 }
 
-#main_menu li:hover {
-  background-color: #cc0000;
-  box-shadow:inset 1px 1px 1px 1px #ff0000;
+#overlapFix {
+	clear:both;
 }
 
-#header nav ul {
-  	text-align: center; 
-  	background-color: #262626;
-  	margin: auto;
-  	list-style: none;
-  	padding: 0;
-	background-image: url(../img/header_background.jpg);
-}
-
-#header a:visited {
-   color: #fff;	
-}
-
-#header a:link{
-  color: #fff;
-}
+/**********************************************
+SMALLER SCREENS MEDIA
+***********************************************/
 
 @media (max-width: 960px){
-	
+
 	#videoDiv{
 		float: none;
 		width: 95%;
 		text-align: center;
 		margin: 0 auto;
 	}
-	
+
 	.videoWrapper {
 		position: relative;
 		padding-bottom: 56%; /* 16:9 */
@@ -228,7 +227,7 @@ section {
 		height: 0;
 		margin: 0;
 	}
-	
+
 	.videoWrapper iframe {
 		position: absolute;
 		top: 0;
@@ -243,14 +242,14 @@ section {
 		height: 300px;
 		float: none;
 	}
-	
+
 	.chatWrapper {
 		position: relative;
 		padding-bottom: 0;
 		padding-top: 0;
 		height: 100%;
 	}
-	
+
 	.chatWrapper iframe {
 		position: absolute;
 		top: 0;
@@ -259,18 +258,17 @@ section {
 		height: 100%;
 		box-shadow: none;
 	}
-	
+
 	#footNote {
 		text-align: center;
-		float: none;
-		position: relative;
+		float: right;
 	}
 
 	#VideoTitle{
 		font-size: 4.5vw;
 		color: #ffffff;
 	}
-	
+
 	#timeSinceStart {
 		padding-top: 3px;
 		font-size: 2.9vw;
